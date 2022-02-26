@@ -1,8 +1,29 @@
-import './style.css'
+import "./style.css";
 
-const app = document.querySelector<HTMLDivElement>('#app')!
+const addTaskForm = document.querySelector<HTMLFormElement>("#addTaskForm")!;
+const addTaskInput = document.querySelector<HTMLInputElement>("#addTaskInput")!;
+const taskList = document.querySelector<HTMLUListElement>("#taskList")!;
 
-app.innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+addTaskForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  addTask(addTaskInput.value);
+  addTaskInput.value = "";
+});
+
+const addTask = (newTask: string) => {
+  if (!newTask) {
+    return;
+  }
+  const newTaskItem = document.createElement("li");
+  newTaskItem.innerText = newTask;
+  newTaskItem.addEventListener("click", () => {
+    newTaskItem.classList.toggle("completed");
+  });
+
+  newTaskItem.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    newTaskItem.remove();
+  });
+
+  taskList.appendChild(newTaskItem);
+};

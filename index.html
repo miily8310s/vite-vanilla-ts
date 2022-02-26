@@ -4,10 +4,24 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Viteで作ったTODOアプリ</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="container">
+      <h1>Viteで作ったTODOアプリ</h1>
+      <p>左クリックすると完了に、右クリックするとタスクを削除できます。</p>
+      <ul id="taskList"></ul>
+      <form id="addTaskForm">
+        <input
+          type="text"
+          name="addTaskInput"
+          id="addTaskInput"
+          placeholder="ここにタスクを入力してください"
+          value=""
+        />
+        <button id="addTaskButton">+</button>
+      </form>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

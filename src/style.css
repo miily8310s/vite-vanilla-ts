@@ -1,8 +1,42 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+:root {
+  --border-color: black;
+  --completed-color: #b6b6b6;
+}
+
+* {
+  font-family: "Times New Roman", Times, serif;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  border: 1px var(--border-color) solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  max-width: 450px;
+}
+
+li.completed {
+  color: var(--completed-color);
+  text-decoration: line-through;
+}
+
+form {
+  margin-top: 100px;
+}
+
+input {
+  min-width: 450px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px var(--border-color) solid;
+}
+
+button {
+  cursor: pointer;
 }
